@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Reports — Pinewell clinic administration template (demo data only).">
+    <title>Reports | Pinewell Clinic</title>
+    <link rel="icon" href="../assets/icons/clinic.svg" type="image/svg+xml">
+    <script>
+      // Apply saved theme + sidebar state before first paint (no flash or layout shift).
+      (function () {
+        var r = document.documentElement, get = function (k) { try { return localStorage.getItem('pinewell-' + k); } catch (e) { return null; } };
+        var t = get('theme') || 'light';
+        r.dataset.theme = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        r.dataset.sidebar = get('sidebar') || 'expanded';
+      })();
+    </script>
+    <link rel="stylesheet" href="../src/css/main.css">
+  </head>
+  <body data-page="reports">
+    <div id="app"></div>
+    <noscript><p style="padding:24px">This template needs JavaScript enabled.</p></noscript>
+    <script type="module" src="../src/js/main.js"></script>
+  </body>
+</html>
